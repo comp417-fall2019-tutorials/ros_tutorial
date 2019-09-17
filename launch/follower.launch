@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <!--<node name="collision_detection" pkg="gcg" type="collision_detection" output="screen"/>-->
+    <node name="pub" pkg="object_follower" type="publisher_node.py" output="screen"/>
+    <node name="sub" pkg="object_follower" type="subscriber_node.py" output="screen"/>
+</launch>
+
