@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="throttle_multiplier" default="0.4"/>         <!-- Multiplier to apply to throttle commands -->
+    <arg name="steering_multiplier" default="0.4"/>         <!-- Multiplier to apply to steering commands -->
+
+    <node name="keyboard_control" pkg="ros_tutorial" type="keyboard_control_node.py" output="screen">
+        <param name="throttle_multiplier" type="double" value="$(arg throttle_multiplier)"/>
+        <param name="steering_multiplier" type="double" value="$(arg steering_multiplier)"/>
+    </node>
+</launch>
+

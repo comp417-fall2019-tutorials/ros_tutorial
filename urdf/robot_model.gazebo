@@ -29,18 +29,12 @@
   <!-- camera -->
   <gazebo reference="camera">
     <sensor type="camera" name="camera1">
-      <update_rate>30.0</update_rate>
+      <update_rate>15.0</update_rate>
       <camera name="head">
-<!--        <horizontal_fov>1.3962634</horizontal_fov>-->
-        <horizontal_fov>2.09439510239</horizontal_fov>
-<!--        <horizontal_fov>2.845</horizontal_fov>-->
+        <horizontal_fov>1.571</horizontal_fov>
         <image>
-<!--          <width>800</width>-->
-<!--          <height>800</height>-->
-<!--          <width>160</width>-->
-<!--          <height>90</height>-->
-            <width>640</width>-->
-            <height>360</height>
+            <width>480</width>-->
+            <height>270</height>
             <format>R8G8B8</format>
           </image>
           <clip>
@@ -65,40 +59,7 @@
       </sensor>
     </gazebo>
 
-    <!-- camera air -->
-  <gazebo reference="camera_air">
-    <sensor type="camera" name="camera_air">
-      <update_rate>30.0</update_rate>
-      <camera name="head">
-        <horizontal_fov>2.09439510239</horizontal_fov>
-        <image>
-            <width>640</width>-->
-            <height>360</height>
-            <format>R8G8B8</format>
-          </image>
-          <clip>
-            <near>0.02</near>
-            <far>300</far>
-          </clip>
-        </camera>
-        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-          <alwaysOn>true</alwaysOn>
-          <updateRate>0.0</updateRate>
-          <cameraName>camera_air</cameraName>
-          <imageTopicName>image_raw</imageTopicName>
-          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-          <frameName>camera_air</frameName>
-          <hackBaseline>0.07</hackBaseline>
-          <distortionK1>0.0</distortionK1>
-          <distortionK2>0.0</distortionK2>
-          <distortionK3>0.0</distortionK3>
-          <distortionT1>0.0</distortionT1>
-          <distortionT2>0.0</distortionT2>
-        </plugin>
-      </sensor>
-    </gazebo>
-
-    <!-- hokuyo -->
+  <!-- hokuyo -->
   <gazebo reference="hokuyo">
     <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>

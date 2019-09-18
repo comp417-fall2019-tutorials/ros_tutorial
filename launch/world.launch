@@ -11,10 +11,10 @@
   <arg name="yaw" default="0"/>
 
   <!-- Launch robot model -->
-  <include file="$(find object_follower)/launch/robot_description.launch"/>
+  <include file="$(find ros_tutorial)/launch/robot_description.launch"/>
 
   <!-- World File -->
-  <arg name="world_file" default="$(find object_follower)/worlds/field.world"/>
+  <arg name="world_file" default="$(find ros_tutorial)/worlds/trees_apartment.world"/>
 
   <!-- Launch Gazebo World -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -25,10 +25,10 @@
   </include>
 
   <!-- Find my robot Description-->
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find object_follower)/urdf/robot_model.xacro'"/>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ros_tutorial)/urdf/robot_model.xacro'"/>
 
   <!-- Spawn My Robot -->
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
         args="-urdf -param robot_description -model robot_model
               -x $(arg x) -y $(arg y) -z $(arg z)
               -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>

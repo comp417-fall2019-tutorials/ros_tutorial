@@ -2,16 +2,16 @@
 
 <robot name="robot_model" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find object_follower)/urdf/robot_model.gazebo" />
+  <xacro:include filename="$(find ros_tutorial)/urdf/robot_model.gazebo" />
   <link name="robot_footprint"></link>
 
   <gazebo reference="chassis">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
 
   <gazebo reference="front_caster">
     <selfCollide>false</selfCollide>
-    <material>Gazebo/White</material>
+    <material>Gazebo/Black</material>
     <mu1>0</mu1>
     <mu2>0</mu2>
     <minDepth>0.01</minDepth>
@@ -20,7 +20,7 @@
 
   <gazebo reference="back_caster">
     <selfCollide>false</selfCollide>
-    <material>Gazebo/White</material>
+    <material>Gazebo/Black</material>
     <mu1>0</mu1>
     <mu2>0</mu2>
     <minDepth>0.01</minDepth>
@@ -28,14 +28,14 @@
   </gazebo>
 
   <gazebo reference="right_pad">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
   <gazebo reference="left_pad">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
   <gazebo reference="left_wheel">
     <selfCollid>false</selfCollid>
-    <material>Gazebo/White</material>
+    <material>Gazebo/Black</material>
     <mu1>10</mu1>
     <mu2>10</mu2>
     <minDepth>0.01</minDepth>
@@ -43,7 +43,7 @@
   </gazebo>
   <gazebo reference="right_wheel">
     <selfCollid>false</selfCollid>
-    <material>Gazebo/White</material>
+    <material>Gazebo/Black</material>
     <mu1>10</mu1>
     <mu2>10</mu2>
     <minDepth>0.01</minDepth>
@@ -263,42 +263,6 @@
   </joint>
 
 
-  <!-- CAMERA AIR LINK -->
-  <link name="camera_air">
-    <pose>0 0 0 0 0 0</pose>
-    <inertial>
-      <mass value="0"/>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-      <inertia
-              ixx="1e-6" ixy="0" ixz="0"
-              iyy="1e-6" iyz="0"
-              izz="1e-6"
-      />
-    </inertial>
-
-    <visual name='camera_air_visual'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
-      <geometry>
-        <box size="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-
-    <collision name='camera_air_collision'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
-      <geometry>
-        <box size="0.0 0.0 0.0"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <joint type="fixed" name="camera_air_joint">
-    <origin xyz="0.2 0.0 2.0" rpy="0 1.5707 0"/>
-    <child link="camera_air"/>
-    <parent link="chassis"/>
-    <axis xyz="0 1 0" rpy="0 0 0"/>
-  </joint>
-
-
   <link name="right_pad">
     <pose>0 0 0 0 0 0</pose>
     <inertial>
@@ -383,7 +347,7 @@
     <visual name='hokuyo_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <mesh filename="package://object_follower/meshes/hokuyo.dae"/>
+        <mesh filename="package://ros_tutorial/meshes/hokuyo.dae"/>
       </geometry>
     </visual>
 

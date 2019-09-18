@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <launch>
-    <!--<node name="collision_detection" pkg="gcg" type="collision_detection" output="screen"/>-->
-    <node name="pub" pkg="object_follower" type="publisher_node.py" output="screen"/>
-    <node name="sub" pkg="object_follower" type="subscriber_node.py" output="screen"/>
+    <arg name="color_to_follow"                 default="255,0,0"/>     <!-- Color for robot to follow in BGR format -->
+    <arg name="throttle"                        default="0.6"/>         <!-- Throttle applied when following -->
+    <arg name="steering_correction_gain"        default="0.01"/>        <!-- Steering proportional gain applied when turning towards colored object to track -->
+
+    <node name="color_follower_node" pkg="ros_tutorial" type="color_follower_node.py" output="screen">
+        <param name="color_to_follow" type="string" value="$(arg color_to_follow)"/>
+        <param name="throttle" type="double" value="$(arg throttle)"/>
+        <param name="steering_correction_gain" type="double" value="$(arg steering_correction_gain)"/>
+    </node>
 </launch>
 
