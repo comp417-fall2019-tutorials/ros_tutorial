@@ -24,9 +24,9 @@ POS_TRACKING_LEN = 1000
 POS_TRACKING_MIN_DELTA = 0.05
 
 pos_tracking = {
-    'red_ball': deque(maxlen=POS_TRACKIN_LEN),
-    'blue_ball': deque(maxlen=POS_TRACKIN_LEN),
-    'green_ball': deque(maxlen=POS_TRACKIN_LEN)
+    'red_ball': deque(maxlen=POS_TRACKING_LEN),
+    'blue_ball': deque(maxlen=POS_TRACKING_LEN),
+    'green_ball': deque(maxlen=POS_TRACKING_LEN)
 }
 
 

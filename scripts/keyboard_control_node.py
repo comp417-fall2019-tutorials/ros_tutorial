@@ -60,7 +60,8 @@ if __name__ == "__main__":
             for i in range(len(command_state)):
                 if inc_states[key][i] * command_state[i] < -1e-6:
                     command_state[i] = 0.0
-            command_state = command_state + inc_states[key]
+                else:
+                    command_state[i] = command_state[i] + inc_states[key][i]
         elif key == 's':
             command_state = np.copy(reset_state)
 
