@@ -1,4 +1,5 @@
 # Environment Setup
+__NOTE:__ This setup process is for the 3120 Trottier lab computers which already have ROS Melodic installed on the system. Please refer to  [ROS Melodic Installation](http://wiki.ros.org/melodic/Installation/Ubuntu) for Ubuntu 18 or [ROS Kinetic Installation](http://wiki.ros.org/kinetic/Installation) for Ubuntu 16 for the complete installation process
 - Source the ros setup script:
 
 ```shell script
@@ -12,6 +13,13 @@ source ~/.bashrc
 cd ~
 mkdir -p catkin_ws/src
 ``` 
+
+- If this is the first time building the catkin workspace, be sure that `/devel/setup.bash` has been sources. 
+- Assuming you are currently in the catkin workspace: 
+```shell script
+echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
 
 - Place package code in the catkin_ws/src folder. We will use this repository for that purpose 
 
