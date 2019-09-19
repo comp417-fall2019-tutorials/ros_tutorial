@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <node name="string_publisher_node" pkg="ros_tutorial" type="string_publisher_node.py" output="screen">
+        <param name="msg_to_publish" type="string" value="Hello World"/>
+    </node>
+    <node name="string_subscriber_node" pkg="ros_tutorial" type="string_subscriber_node.py" output="screen">
+    </node>
+</launch>
+
