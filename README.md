@@ -15,17 +15,19 @@ mkdir -p catkin_ws/src
 ``` 
 
 - If this is the first time building the catkin workspace, be sure that `/devel/setup.bash` has been sources. 
-- Assuming you are currently in the catkin workspace: 
+- Assuming you are currently in the catkin workspace (pwd should output the path to your catkin_ws folder): 
 ```shell script
 echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-- Place package code in the catkin_ws/src folder. We will use this repository for that purpose 
+- To verify that everything is setup accordingly, you can inspect the contents of your ~/.bashrc file to ensure the two lines: `source /opt/ros/melodic/setup.bash` and `source <path_to_catkin_ws>/devel/setup.bash` are present
+
+- Place package code in the __catkin_ws/src__ folder. We will use this repository for that purpose 
 
 ```shell script
 cd catkin_ws/src
-git clone https://github.com/stefanwapnick/ros_tutorial.git
+git clone https://github.com/comp417-fall2019-tutorials/ros_tutorial.git
 ```
 
 - Build your catkin_ws folder. Navigate back to the catkin_ws folder and execute the `catkin_make` command 
