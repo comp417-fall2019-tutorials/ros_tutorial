@@ -1,5 +1,5 @@
 # Environment Setup
-__NOTE:__ This setup process is for the 3120 Trottier lab computers which already have ROS Melodic installed on the system. Please refer to  [ROS Melodic Installation](http://wiki.ros.org/melodic/Installation/Ubuntu) for Ubuntu 18 or [ROS Kinetic Installation](http://wiki.ros.org/kinetic/Installation) for Ubuntu 16 for the complete installation process
+__NOTE:__ This setup process is for the 3120 Trottier lab computers which already have ROS Melodic installed on the system. Please refer to  [ROS Melodic Installation](http://wiki.ros.org/melodic/Installation/Ubuntu) for Ubuntu 18 or [ROS Kinetic Installation](http://wiki.ros.org/kinetic/Installation) for Ubuntu 16 for installation on your own machine.
 - Source the ros setup script:
 
 ```shell script
@@ -14,25 +14,23 @@ cd ~
 mkdir -p catkin_ws/src
 ``` 
 
-- If this is the first time building the catkin workspace, be sure that `/devel/setup.bash` has been sources. 
-- Assuming you are currently in the catkin workspace (pwd should output the path to your catkin_ws folder): 
+- If this is the first time building the catkin workspace, `~/catkin_ws/devel/setup.bash` should be included in your `.bashrc`:   
 ```shell script
-echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-- To verify that everything is setup accordingly, you can inspect the contents of your ~/.bashrc file to ensure the two lines: `source /opt/ros/melodic/setup.bash` and `source <path_to_catkin_ws>/devel/setup.bash` are present
-
-- Place package code in the __catkin_ws/src__ folder. We will use this repository for that purpose 
+- To verify that everything is setup accordingly, you can inspect the contents of your ~/.bashrc file to ensure the two lines: `source /opt/ros/melodic/setup.bash` and `source ~/catkin_ws/devel/setup.bash` are present
+- Place package code in the __catkin_ws/src__ folder. We will use this repository for that purpose:
 
 ```shell script
-cd catkin_ws/src
+cd ~/catkin_ws/src
 git clone https://github.com/comp417-fall2019-tutorials/ros_tutorial.git
 ```
 
 - Build your catkin_ws folder. Navigate back to the catkin_ws folder and execute the `catkin_make` command 
 ```shell script
-cd ../
+cd ~/catkin_ws
 catkin_make
 ```
 
